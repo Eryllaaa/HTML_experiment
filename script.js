@@ -9,16 +9,16 @@ fetch(POST_URL, { method: 'POST', headers: {'Content-Type': 'x-www-form-urlencod
     .then(data => {
         //console.log('Success:', data);
         token = data;
-        ChangeText("statusDisplay", "status: success");
+        changeText("statusDisplay", "status: success");
         //ChangeText("token", toString(data));
     })
     .catch((error) => {
         //console.error('Error:', error);
-        ChangeText("statusDisplay", "status: failure");
+        changeText("statusDisplay", "status: failure");
     });
 
 //fetch(GET_URL, {})
 
-function ChangeText(id, text) {
+function changeText(id, text) {
     document.getElementById(id).textContent = text;
 }
