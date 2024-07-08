@@ -9,13 +9,13 @@
 </head>
 
 <body>
-    <h1>v1.12</h1>
+    <h1>v2</h1>
     <h1 id="statusDisplay">status: </h1>
     <h1 id="token">access token: </h1>
     <script src="script.js"></script>
 
     <script src="https://player.twitch.tv/js/embed/v1.js"></script>
-    <div id="<player div ID>"></div>
+    <div id="1"></div>
     <script type="text/javascript">
         var options = {
             width: 1280,
@@ -24,7 +24,7 @@
             video: "<video ID>",
             collection: "<collection ID>",
         };
-        var player = new Twitch.Player("<player div ID>", options);
+        var player = new Twitch.Player("1", options);
         player.setVolume(0.5);
     </script>
 </body>
