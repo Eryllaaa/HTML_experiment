@@ -16,7 +16,11 @@ fetch(url, {
         console.error('Error:', error);
     });
 
-function changeText() {
+function DisplayToken() {
     const newText = "New text content";
     document.getElementById("text").textContent = newText;
+}
+
+function DisplayToken(token) {
+    document.getElementById("text").textContent = token;
 }
