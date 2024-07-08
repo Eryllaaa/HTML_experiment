@@ -1,6 +1,11 @@
 const url = 'https://id.twitch.tv/oauth2/token';
 const data = { username: 'johndoe', password: 'secretpassword' };
 
+function changeText(){
+    const newText = "New text content";
+    document.getElementById('text').textContent = newText;
+}
+
 fetch(url, {
     method: 'POST',
     headers: {
