@@ -5,12 +5,14 @@ fetch(url, { method: 'POST', headers: {'Content-Type': 'x-www-form-urlencoded'},
     .then(response => response.json())
     .then(data => {
         console.log('Success:', data);
+        DisplayToken("success");
     })
     .catch((error) => {
         console.error('Error:', error);
+        DisplayToken("failed");
     });
 
-function DisplayToken() {
+function changeText() {
     const newText = "New text content";
     document.getElementById("text").textContent = newText;
 }
