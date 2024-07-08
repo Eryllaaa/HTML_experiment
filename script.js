@@ -8,9 +8,9 @@ fetch(POST_URL, { method: 'POST', headers: {'Content-Type': 'x-www-form-urlencod
     .then(response => response.json())
     .then(data => {
         //console.log('Success:', data);
-        //token = data;
+        token = data;
         changeText("statusDisplay", "status: success");
-        //ChangeText("token", toString(data));
+        ChangeText("token", "access token: " + toString(data));
     })
     .catch((error) => {
         //console.error('Error:', error);
