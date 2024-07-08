@@ -1,22 +1,17 @@
 const url = 'https://id.twitch.tv/oauth2/token';
+const data = { username: 'johndoe', password: 'secretpassword' };
 
-const options = {
+fetch(url, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, // Uncomment this if you are sending form data in a different format
-};
-
-fetch(url, options)
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json(); // Assuming server returns JSON response
-    })
+    headers: {
+        'Content-Type': 'x-www-form-urlencoded',
+    },
+    body: 'client_id=cvs7ivnkujeg4vn4atbnayc4mjhn6e&client_secret=3l6jsxbzylavaz5xdg6dn85hl3rm9m&grant_type=client_credentials',
+})
+    .then(response => response.json())
     .then(data => {
         console.log('Success:', data);
-        document.getElementById('response').innerHTML = 'Submission successful!';
     })
-    .catch(error => {
+    .catch((error) => {
         console.error('Error:', error);
-        document.getElementById('response').innerHTML = 'Error submitting form.';
     });
