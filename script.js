@@ -9,20 +9,16 @@ fetch(POST_URL, { method: 'POST', headers: {'Content-Type': 'x-www-form-urlencod
     .then(data => {
         //console.log('Success:', data);
         token = data;
-        changeText("statusDisplay", "status: success");
+        ChangeText("statusDisplay", "status: success");
+        //ChangeText("token", toString(data));
     })
     .catch((error) => {
         //console.error('Error:', error);
-        changeText("statusDisplay", "status: failure");
+        ChangeText("statusDisplay", "status: failure");
     });
 
 //fetch(GET_URL, {})
 
-
-function changeText(id, text) {
+function ChangeText(id, text) {
     document.getElementById(id).textContent = text;
-}
-
-function DisplayToken(token) {
-    document.getElementById(token).textContent = token;
 }
